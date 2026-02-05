@@ -1,0 +1,13 @@
+{
+    "git.enabled": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/README.md": true,
+        "**/.vscode": true,
+        "LICENSE": true,
+    },
+    "material-icon-theme.files.associations": {
+        "*.repository.ts": "database"
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "example-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docker:up": "",
+    "docker:down": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipe-sant/example-docker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/felipe-sant/example-docker/issues"
+  },
+  "homepage": "https://github.com/felipe-sant/example-docker#readme"
+}

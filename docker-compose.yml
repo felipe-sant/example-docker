@@ -1,0 +1,36 @@
+services:
+  database:
+    image: postgres:17-alpine
+    container_name: example-docker__database
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: example
+    ports:
+      - 3003:5432
+    volumes:
+      - meu-volume:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - minha-rede
+    
+  backend:
+    build:
+      context: ./backend
+    container_name: example-docker__backend
+    ports:
+      - 3001:3000
+    environment:
+      POSTGRESQL_URL: postgresql://postgres:root@database:5432/example
+    depends_on:
+      - database
+    networks:
+      - minha-rede
+  
+volumes:
+  meu-volume:
+
+networks:
+  minha-rede:
+    driver: bridge
